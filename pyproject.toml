@@ -10,6 +10,7 @@ packages = [{include = "test_ci"}]
 python = "^3.10"
 pytest = "^7.3.1"
 pydantic = "^1.10.8"
+jz = "^0.0.1"
 
 
 [build-system]

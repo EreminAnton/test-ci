@@ -37,6 +37,16 @@ files = [
 ]
 
 [[package]]
+name = "jz"
+version = "0.0.1"
+description = ""
+optional = false
+python-versions = ">=3.8,<4.0"
+files = [
+    {file = "jz-0.0.1-py3-none-any.whl", hash = "sha256:fcc3ab5d118fd25a775fc784f6aee854229849cc1b3d948d1c5274dee5cb0c45"},
+]
+
+[[package]]
 name = "packaging"
 version = "23.1"
 description = "Core utilities for Python packages"
@@ -161,4 +171,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "3490713b91c238171b18262847197c88ecb7976f165ca24332dc520252099e03"
+content-hash = "0aaf8ef2ab293e78534d119e6a03a74e7cb86abcc5aac0a057bb309fcc84492f"
