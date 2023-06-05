@@ -19,13 +19,13 @@ module "aws_sso_elevator" {
   source                           = "github.com/fivexl/terraform-aws-sso-elevator.git"
   aws_sns_topic_subscription_email = "email@gmail.com"
 
-  slack_signing_secret = data.aws_ssm_parameter.sso_elevator_slack_signing_secret.value
-  slack_bot_token      = data.aws_ssm_parameter.sso_elevator_slack_bot_token.value
-  slack_channel_id     = "***********"
-  schedule_expression  = "cron(0 23 * * ? *)" # revoke access schedule expression
-  schedule_expression_for_check_on_inconsistency = "rate(1 hour)" 
-  build_in_docker = true
-  revoker_post_update_to_slack = true
+  slack_signing_secret                           = data.aws_ssm_parameter.sso_elevator_slack_signing_secret.value
+  slack_bot_token                                = data.aws_ssm_parameter.sso_elevator_slack_bot_token.value
+  slack_channel_id                               = "***********"
+  schedule_expression                            = "cron(0 23 * * ? *)" # revoke access schedule expression
+  schedule_expression_for_check_on_inconsistency = "rate(1 hour)"
+  build_in_docker                                = true
+  revoker_post_update_to_slack                   = true
 
   sso_instance_arn = one(data.aws_ssoadmin_instances.this.arns)
 
@@ -38,13 +38,13 @@ module "aws_sso_elevator" {
   s3_bucket_name_for_audit_entry = "fivexl-sso-elevator"
 
   # The default partition prefix is "logs/":
-  s3_bucket_partition_prefix     = "some_prefix/"
+  s3_bucket_partition_prefix = "some_prefix/"
 
   # MFA delete setting for the S3 bucket:
-  s3_mfa_delete                  = false
+  s3_mfa_delete = false
 
   # Object lock setting for the S3 bucket:
-  s3_object_lock                 = true
+  s3_object_lock = true
 
   # The default object lock configuration is as follows:
   # {
@@ -132,7 +132,7 @@ module "aws_sso_elevator" {
       "ResourceType" : "Account",
       "Resource" : "account_id",
       "PermissionSet" : ["ReadOnlyPlus", "AdministratorAccess"],
-      "Approvers" : ["ciso@corp.com"], 
+      "Approvers" : ["ciso@corp.com"],
       "AllowSelfApproval" : true,
     },
 
