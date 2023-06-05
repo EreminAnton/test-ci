@@ -9,6 +9,7 @@ packages = [{include = "test_ci"}]
 [tool.poetry.dependencies]
 python = "^3.10"
 pytest = "^7.3.1"
+pydantic = "^1.10.8"
 
 
 [build-system]
