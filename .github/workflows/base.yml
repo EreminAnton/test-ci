@@ -9,8 +9,10 @@ jobs:
     uses: EreminAnton/re-usable-ci/.github/workflows/python-workflow.yml@main
     with:
       python-version: "3.10"
+      aws-default-region: "eu-central-1"
 
   terraform-job:
     uses: EreminAnton/re-usable-ci/.github/workflows/terraform-workflow.yml@main
     with:
       terraform-version: "1.4.4"
+      aws-default-region: "eu-central-1"
