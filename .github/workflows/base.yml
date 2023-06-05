@@ -6,7 +6,6 @@ on:
 
 jobs:
   python-job:
-    # uses: my-org/.github/.github/workflows/python-workflow.yml@main
     uses: EreminAnton/re-usable-ci/.github/workflows/python-workflow.yml@main
     with:
       python-version: "3.10"
