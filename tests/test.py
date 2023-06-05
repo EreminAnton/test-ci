@@ -8,4 +8,5 @@ def test():
     assert a == b is False
     assert a == d is True
     assert a == c is False
+    assert b == c is False
     
