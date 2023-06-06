@@ -16,7 +16,8 @@ data "aws_ssm_parameter" "sso_elevator_slack_bot_token" {
 }
 
 module "aws_sso_elevator" {
-  source                           = "github.com/fivexl/terraform-aws-sso-elevator.git?ref=v1.0.0"
+  source  = "fivexl/sso-elevator/aws"
+  version = "0.1.2"
   aws_sns_topic_subscription_email = "email@gmail.com"
 
   slack_signing_secret                           = data.aws_ssm_parameter.sso_elevator_slack_signing_secret.value
