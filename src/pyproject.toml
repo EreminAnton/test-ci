@@ -13,6 +13,9 @@ pydantic = "^1.10.8"
 jz = "^0.0.1"
 
 
+[tool.poetry.group.dev.dependencies]
+boto3 = "^1.26.147"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
