@@ -5,8 +5,8 @@ d = 1
 
 
 def test_asdf():
-    assert a == b is False
-    assert a == d is True
-    assert a == c is False
-    assert b == c is False
+    assert a != b 
+    assert a == d 
+    assert a != c 
+    assert b != c 
     
