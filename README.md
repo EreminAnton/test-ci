@@ -1,5 +1,4 @@
-terraform-docs markdown table --indent 2 --output-mode inject --output-file README.md ./
-<!-- BEGIN_TF_DOCS -->
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK --> 
 ## Requirements
 
 | Name | Version |
@@ -41,4 +40,4 @@ terraform-docs markdown table --indent 2 --output-mode inject --output-file READ
 | Name | Description |
 |------|-------------|
 | <a name="output_aws_sso_elevator_lambda_function_url"></a> [aws\_sso\_elevator\_lambda\_function\_url](#output\_aws\_sso\_elevator\_lambda\_function\_url) | n/a |
-<!-- END_TF_DOCS -->
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
