@@ -1,14 +1,12 @@
 repos:
-# Terraform
 - repo: https://github.com/antonbabenko/pre-commit-terraform
-  rev: v1.77.2
+  rev: v1.74.1
   hooks:
+    - id: terraform_fmt
+    - id: terraform_tflint
+    - id: terraform_validate
     - id: terraform_docs
-- repo: local
-  hooks:
-    - id: poetry-export
-      name: Export dependencies with Poetry
-      entry: bash -c 'cd src && poetry export --dev -f requirements.txt --output requirements.txt && git diff --exit-code requirements.txt || git add requirements.txt'
-      language: system
-      files: src/pyproject.toml$
-      pass_filenames: false
+    - id: terraform_tfsec
+      args:
+        - --args=--config-file=__GIT_WORKING_DIR__/.tfsec.yaml
+    - id: terraform_checkov
