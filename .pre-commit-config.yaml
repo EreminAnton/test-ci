@@ -1,12 +1,9 @@
 repos:
-- repo: https://github.com/antonbabenko/pre-commit-terraform
-  rev: v1.74.1
+- repo: local
   hooks:
-    - id: terraform_fmt
-    - id: terraform_tflint
-    - id: terraform_validate
-    - id: terraform_docs
-    - id: terraform_tfsec
-      args:
-        - --args=--config-file=__GIT_WORKING_DIR__/.tfsec.yaml
-    - id: terraform_checkov
+    - id: pipenv-export
+      name: Export dependencies with Pipenv
+      entry: bash -c 'pipenv run pip freeze > requirements.txt && git diff --exit-code requirements.txt || git add requirements.txt'
+      language: system
+      files: Pipfile.lock$
+      pass_filenames: false
