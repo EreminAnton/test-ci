@@ -10,6 +10,8 @@ jobs:
     with:
       python-version: "3.10"
       aws-default-region: "eu-central-1"
+      working-directory: "functions"
+
 
   terraform-job:
     uses: EreminAnton/re-usable-ci/.github/workflows/terraform-workflow.yml@main
