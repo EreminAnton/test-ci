@@ -1,22 +1,18 @@
-name: 'base'
+name: My Workflow
 
 on:
   push:
-    tags: [ v* ]
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   python-job:
-    uses: fivexl/github-reusable-workflows/.github/workflows/python-job.yml@main
+    uses: EreminAnton/re-usable-ci/.github/workflows/python-workflow.yml@main
     with:
       python-version: "3.10"
       aws-default-region: "eu-central-1"
-      working-directory: "functions"
 
   terraform-job:
-    uses: fivexl/github-reusable-workflows/.github/workflows/terraform-job.yml@main
+    uses: EreminAnton/re-usable-ci/.github/workflows/terraform-workflow.yml@main
     with:
-      terraform-version: "1.5.0"
+      terraform-version: "1.4.4"
       aws-default-region: "eu-central-1"
