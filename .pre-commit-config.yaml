@@ -1,9 +1,0 @@
-repos:
-- repo: local
-  hooks:
-    - id: pipenv-export
-      name: Export dependencies with Pipenv
-      entry: bash -c 'pipenv run pip freeze > requirements.txt && git diff --exit-code requirements.txt || git add requirements.txt'
-      language: system
-      files: Pipfile.lock$
-      pass_filenames: false
